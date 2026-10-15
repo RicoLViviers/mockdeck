@@ -1,0 +1,31 @@
+{
+  "name": "mockdeck",
+  "version": "0.0.1",
+  "description": "A zero-config CLI for generating mock REST APIs.",
+  "keywords": [
+    "mockdeck",
+    "mock-api",
+    "rest-api",
+    "api-mocking",
+    "mock-server",
+    "cli",
+    "developer-tools"
+  ],
+  "license": "MIT",
+  "author": "Rico Viviers",
+  "main": "src/server.js",
+  "bin": {
+    "mockdeck": "bin/mockdeck.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicoLViviers/mockdeck"
+  },
+  "bugs": {
+    "url": "https://github.com/RicoLViviers/mockdeck/issues"
+  },
+  "homepage": "https://github.com/RicoLViviers/mockdeck#readme"
+}
