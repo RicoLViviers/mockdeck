@@ -1,8 +1,6 @@
 const http = require("node:http");
 const users = require("../examples/users.json");
 
-const PORT = 3000;
-
 // Handle incoming HTTP requests.
 const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "application/json");
@@ -20,9 +18,9 @@ const server = http.createServer((req, res) => {
 });
 
 // Start the server.
-function startServer() {
-    server.listen(PORT, () => {
-        console.log(`Mockdeck running at http://localhost:${PORT}`);
+function startServer(port = 3000) {
+    server.listen(port, () => {
+        console.log(`Mockdeck running at http://localhost:${port}`);
     });
 }
 
