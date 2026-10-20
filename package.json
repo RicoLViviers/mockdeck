@@ -1,6 +1,6 @@
 {
   "name": "mockdeck",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A zero-config CLI for generating mock REST APIs.",
   "keywords": [
     "mockdeck",
