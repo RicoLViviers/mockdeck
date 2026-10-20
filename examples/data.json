@@ -1,0 +1,13 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" }
+  ],
+  "products": [
+    { "id": 1, "name": "Keyboard", "price": 500 },
+    { "id": 2, "name": "Mouse", "price": 250 }
+  ],
+  "posts": [
+    { "id": 1, "title": "Hello world" }
+  ]
+}
