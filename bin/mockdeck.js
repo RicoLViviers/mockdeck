@@ -2,23 +2,6 @@
 
 const { startServer } = require("../src/server");
 
-function getPort(portIndex)
-{
-    const value = args[portIndex + 1];
-    const port = Number(value);
-
-    if (
-        !Number.isInteger(port) ||
-        port < 1 ||
-        port > 9999
-    )
-    {
-        throw new Error("Port number must be bigger than 1 and smaller than 9999");
-    }
-
-    return port
-}
-
 function processArgs(args) {
     const options = {
         file: null,
