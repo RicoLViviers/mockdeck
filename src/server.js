@@ -1,26 +1,28 @@
 const http = require("node:http");
-const users = require("../examples/users.json");
+const fs = require("node:fs");
 
-// Handle incoming HTTP requests.
-const server = http.createServer((req, res) => {
-    res.setHeader("Content-Type", "application/json");
+function startServer(options) {
+    const data = JSON.parse(fs.readFileSync(options.file, "utf8"));
 
-    if (req.method === "GET" && req.url === "/users") {
-        res.writeHead(200);
-        res.end(JSON.stringify(users));
-        return;
-    }
+    const server = http.createServer((req, res) => {
+        res.setHeader("Content-Type", "application/json");
 
-    res.writeHead(404);
-    res.end(JSON.stringify({
-        error: "Route not found"
-    }));
-});
+        const type = req.url.slice(1);
 
-// Start the server.
-function startServer(port = 3000) {
-    server.listen(port, () => {
-        console.log(`Mockdeck running at http://localhost:${port}`);
+        if (req.method === "GET" && Object.keys(data).includes(type)) {
+            res.writeHead(200);
+            res.end(JSON.stringify(data[type]));
+            return;
+        }
+
+        res.writeHead(404);
+        res.end(JSON.stringify({
+            error: "Route not found"
+        }));
+    });
+
+    server.listen(options.port, () => {
+        console.log(`Mockdeck running at http://localhost:${options.port}`);
     });
 }
 

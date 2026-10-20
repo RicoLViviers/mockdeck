@@ -26,9 +26,15 @@ function processArgs(args) {
             }
 
             options.port = port;
+        } else if (!arg.startsWith('-') && options.file === null) {
+            options.file = arg;
         } else {
             throw new Error(`Unknown option: ${arg}`);
         }
+    }
+
+    if (!options.help && options.file === null) {
+        throw new Error("Please provide a path to a JSON file.");
     }
 
     return options;
@@ -39,7 +45,7 @@ function printHelp() {
 Mockdeck - A zero-config CLI for generating mock REST APIs.
 
 Usage:
-  mockdeck [options]
+  mockdeck <path> [options]
 
 Options:
   -p, --port <port>  Set the server port (default: 3000)

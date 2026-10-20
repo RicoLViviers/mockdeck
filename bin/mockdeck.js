@@ -9,7 +9,7 @@ try {
     if (options.help) {
         printHelp();
     } else {
-        startServer(options.port);
+        startServer(options);
     }
 } catch (error) {
     console.error(`Error: ${error.message}`);
