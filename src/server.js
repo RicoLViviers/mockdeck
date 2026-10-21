@@ -18,6 +18,16 @@ function startServer(options) {
         }
     }
 
+    if (typeof data !== "object" || data === null || Array.isArray(data)) {
+        throw new Error("JSON data must be an object containing resources.");
+    }
+
+    for (const [resource, collection] of Object.entries(data)) {
+        if (!Array.isArray(collection)) {
+            throw new Error(`Resource "${resource}" must contain an array.`);
+        }
+    }
+
     const server = http.createServer((req, res) => {
         res.setHeader("Content-Type", "application/json");
 
