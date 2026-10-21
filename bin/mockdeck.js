@@ -1,6 +1,17 @@
 #!/usr/bin/env node
 
+const { processArgs, printHelp } = require("../src/cli");
 const { startServer } = require("../src/server");
 
-// Start the mock API server.
-startServer();
+try {
+    const options = processArgs(process.argv.slice(2));
+
+    if (options.help) {
+        printHelp();
+    } else {
+        startServer(options);
+    }
+} catch (error) {
+    console.error(`Error: ${error.message}`);
+    process.exitCode = 1;
+}

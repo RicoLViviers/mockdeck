@@ -1,6 +1,6 @@
 {
   "name": "mockdeck",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A zero-config CLI for generating mock REST APIs.",
   "keywords": [
     "mockdeck",
@@ -18,7 +18,7 @@
     "mockdeck": "bin/mockdeck.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/RicoLViviers/mockdeck/issues"
   },
-  "homepage": "https://github.com/RicoLViviers/mockdeck#readme"
+  "homepage": "https://github.com/RicoLViviers/mockdeck#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
 }
