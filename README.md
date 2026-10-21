@@ -95,16 +95,6 @@ npm test
 
 Automated test coverage is still a work in progress.
 
-## Roadmap
-
-- [ ] Generate API endpoints automatically from JSON resource names.
-- [ ] Support loading user-provided JSON files through the CLI.
-- [ ] Support multiple resources, such as users, products, and posts.
-- [ ] Add individual resource endpoints, such as `/users/:id`.
-- [ ] Improve CLI usage information and error handling.
-- [ ] Add automated tests for server behavior and generated endpoints.
-- [ ] Publish the package to npm.
-
 ## Contributing
 
 Contributions, bug reports, and feature suggestions are welcome.
